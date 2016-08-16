@@ -8,7 +8,11 @@
 
 if(isset($_GET['cat'])){
     $var=$_GET['cat'];
-    $con=new mysqli("ap-cdbr-azure-east-c.cloudapp.net", "b6a499dae60006", "aeeb879c", "db_shahidbaig");
+    $con=new mysqli("ap-cdbr-azure-east-c.cloudapp.net", "b6a499dae60006", "aeeb879c", "acsm_f064914b8cabe74");
+    if(!$con){
+        echo "error";
+
+    }
     $sql="select * from bug where lower(bug_category)=lower('$var')";
     $result=$con->query($sql);
     $con->close();
